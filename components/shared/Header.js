@@ -1,16 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import "../../styles/main.scss";
 
-function Header(props) {
-  const { title, children } = props;
+function Header() {
   return (
     <React.Fragment>
-      <p> {title} </p>
-      {children}
-      <p className="customClass">I am styled P element</p>
-      <p className="customClassFromFile">I am styled P element</p>
-
       <Link href="/">
         <a> Home </a>
       </Link>
