@@ -10,7 +10,7 @@ function Portfolios(props) {
     return posts.map((post) => {
       return (
         <li key={post.id}>
-          <Link href={`/portfolio?title=${post.title}`}>
+          <Link as={`/portfolio/${post.id}`} href={`/portfolio?id=${post.id}`}>
             <a style={{ fontSize: "20px" }}> {post.title} </a>
           </Link>
         </li>
