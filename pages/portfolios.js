@@ -1,5 +1,7 @@
 import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
+import BasePage from "../components/BasePage";
+
 import axios from "axios";
 import Link from "next/link";
 
@@ -20,8 +22,10 @@ function Portfolios(props) {
 
   return (
     <BaseLayout>
-      <h1>I am Portfolios page</h1>
-      <ul>{renderPosts()}</ul>
+      <BasePage>
+        <h1>I am Portfolios page</h1>
+        <ul>{renderPosts()}</ul>
+      </BasePage>
     </BaseLayout>
   );
 }
