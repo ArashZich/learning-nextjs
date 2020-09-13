@@ -8,25 +8,40 @@ import {
   Nav,
   NavItem,
 } from "reactstrap";
+import auth0 from "../../services/auth0";
 
-const BsNavLink = ({ route, title }) => (
-  <Link href={route}>
-    <a className="nav-link port-navbar-link"> {title} </a>
-  </Link>
-);
-
-const Login = () => {
-  return <span className="nav-link port-navbar-link clickable"> Login </span>;
-};
-
-const Logout = () => {
-  return <span className="nav-link port-navbar-link clickable"> Logout </span>;
-};
-
-const Header = (props) => {
+function Header(props) {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => setIsOpen(!isOpen);
+
+  const BsNavLink = ({ route, title }) => (
+    <Link href={route}>
+      <a className="nav-link port-navbar-link"> {title} </a>
+    </Link>
+  );
+
+  const Login = () => {
+    return (
+      <span
+        onClick={auth0.login}
+        className="nav-link port-navbar-link clickable"
+      >
+        Login
+      </span>
+    );
+  };
+
+  const Logout = () => {
+    return (
+      <span
+        onClick={auth0.logout}
+        className="nav-link port-navbar-link clickable"
+      >
+        {" "}
+        Logout{" "}
+      </span>
+    );
+  };
 
   return (
     <div>
@@ -68,6 +83,6 @@ const Header = (props) => {
       </Navbar>
     </div>
   );
-};
+}
 
 export default Header;

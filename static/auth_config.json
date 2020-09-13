@@ -1,0 +1,5 @@
+{
+  "domain": "dev-oud7zwbu.us.auth0.com",
+  "clientId": "tZ7ClN3T5Lxhr2cEq1M6uHCvGK0Mo2bz",
+  "redirectUri": "http://localhost:3000/callback"
+}
